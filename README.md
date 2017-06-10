@@ -1,3 +1,15 @@
+=================================
+
+
+Forked from mattanderson/vagrant-lamp.
+Changes:
+
+Upgrade from php5.5 to php7.0
+with extensions: gd, xdebug, xml, json, curl
+
+Removed installing phpunit globally on the VM.
+
+=================================
 Vagrant LAMP
 ============
 
@@ -22,14 +34,9 @@ Usage
 
 ### Startup
 
-1. Download one of the releases available [https://github.com/mattandersen/vagrant-lamp/releases](https://github.com/mattandersen/vagrant-lamp/releases)
-2. Extract the ZIP file.
-3. From the command-line:
-```
-$ cd vagrant-lamp-release
-$ vagrant up
-```
-That is pretty simple.
+git clone to your desktop (or wherever youre working)
+ and
+vagrant up
 
 ### Connecting
 
@@ -43,19 +50,18 @@ Password: root
 
 Technical Details
 -----------------
-* Ubuntu 14.04 64-bit
+* Ubuntu 14.04 32bit
 * Apache 2.4
-* PHP 5.5
+* PHP 7.0
 * MySQL 5.5
 * XDebug
-* PHPUnit 4.8
 * Composer
 
 We are using the base Ubuntu 14.04 box from Vagrant. If you don't already have it downloaded
 the Vagrantfile has been configured to do it for you. This only has to be done once
 for each account on your host computer.
 
-The web root is located in the project directory at `src/` and you can install your files there
+The web root is located in the project directory at `src/public` and you can install your files there
 
 And like any other vagrant file you have SSH access with
 ```

@@ -2,11 +2,11 @@
 
 apache_config_file="/etc/apache2/envvars"
 apache_vhost_file="/etc/apache2/sites-available/vagrant_vhost.conf"
-php_config_file="/etc/php5/apache2/php.ini"
-xdebug_config_file="/etc/php5/mods-available/xdebug.ini"
+php_config_file="/etc/php7.0/apache2/php.ini"
+xdebug_config_file="/etc/php7.0/mods-available/xdebug.ini"
 mysql_config_file="/etc/mysql/my.cnf"
 default_apache_index="/var/www/html/index.html"
-project_web_root="src"
+project_web_root="src/public"
 
 # This function is called at the very bottom of the file
 main() {
@@ -80,7 +80,11 @@ EOF
 }
 
 php_go() {
-	apt-get -y install php5 php5-curl php5-mysql php5-sqlite php5-xdebug php-pear
+	add-apt-repository ppa:ondrej/php
+	apt-get update
+    apt-get upgrade
+	apt-get install -y --force-yes php7.0-common php7.0-dev php7.0-json php7.0-opcache php7.0-cli libapache2-mod-php7.0 php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-gd php7.0-mcrypt php7.0-mbstring php7.0-bcmath php7.0-zip php7.0-xml
+	apt-get install php-xdebug
 
 	sed -i "s/display_startup_errors = Off/display_startup_errors = On/g" ${php_config_file}
 	sed -i "s/display_errors = Off/display_errors = On/g" ${php_config_file}
@@ -102,12 +106,6 @@ EOF
 		curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 	fi
 
-	# Install PHP Unit 4.8 globally
-	if [ ! -f "/usr/local/bin/phpunit" ]; then
-		curl -O -L https://phar.phpunit.de/phpunit-old.phar
-		chmod +x phpunit-old.phar
-		mv phpunit-old.phar /usr/local/bin/phpunit
-	fi
 }
 
 mysql_go() {
