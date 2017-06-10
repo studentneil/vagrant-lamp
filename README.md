@@ -1,17 +1,16 @@
-=================================
-
+Vagrant LAMP 7.0
+----------------
 
 Forked from mattanderson/vagrant-lamp.
-Changes:
+### Changes:
 
-Upgrade from php5.5 to php7.0
-with extensions: gd, xdebug, xml, json, curl
+* Upgrade from php5.5 to php7.0 with extensions: gd, xdebug, xml, json, curl
 
-Removed installing phpunit globally on the VM.
+* Removed installing phpunit globally on the VM.
 
-=================================
+
 Vagrant LAMP
-============
+------------
 
 Want to test a new web app but don't want to affect your current Apache / MySQL / PHP system?
 Applications like MAMP are great, but they don't make it easy to maintain multiple, separate
