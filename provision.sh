@@ -2,8 +2,8 @@
 
 apache_config_file="/etc/apache2/envvars"
 apache_vhost_file="/etc/apache2/sites-available/vagrant_vhost.conf"
-php_config_file="/etc/php7.0/apache2/php.ini"
-xdebug_config_file="/etc/php7.0/mods-available/xdebug.ini"
+php_config_file="/etc/php/7.0/apache2/php.ini"
+xdebug_config_file="/etc/php/7.0/mods-available/xdebug.ini"
 mysql_config_file="/etc/mysql/my.cnf"
 default_apache_index="/var/www/html/index.html"
 project_web_root="src/public"
