@@ -33,9 +33,10 @@ Usage
 
 ### Startup
 
-git clone to your desktop (or wherever youre working)
- and
-vagrant up
+* git clone to your desktop (or wherever youre working)
+* cd into the vagrant box folder
+* git clone (your repository) src (this will create the correct folder structure)
+* vagrant up
 
 ### Connecting
 
@@ -49,14 +50,14 @@ Password: root
 
 Technical Details
 -----------------
-* Ubuntu 14.04 32bit
+* Ubuntu Xenial 16.04 32bit
 * Apache 2.4
 * PHP 7.0
 * MySQL 5.5
 * XDebug
 * Composer
 
-We are using the base Ubuntu 14.04 box from Vagrant. If you don't already have it downloaded
+We are using the base Ubuntu 16.04 box from Vagrant. If you don't already have it downloaded
 the Vagrantfile has been configured to do it for you. This only has to be done once
 for each account on your host computer.
 
